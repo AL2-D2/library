@@ -1,4 +1,7 @@
 const bookContainer = document.querySelector(".book-grid-container");
+const authorAndTitleSection = document.querySelector(".author-title");
+const pageNumberSection = document.querySelector(".page-number");
+const bookActionsSection = document.querySelector(".book-actions");
 
 const library = [];
 
@@ -26,12 +29,49 @@ addBookToLibrary("House of Mirth", "Edith Wharton", 205, true);
 addBookToLibrary("Goldbug", "Edgar Allen Poe", 35, false);
 addBookToLibrary("Red Badge Of Courage", "Stephan Carne", 150, true);
 
-function showOnSite(){
-    for(const book of library){
+function showBooksOnSite() {
+    for (const book of library) {
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
         bookContainer.append(bookCard);
+
+        const authorTitleContainer = document.createElement("div");
+        authorTitleContainer.classList.add("title");
+        bookCard.append(authorTitleContainer);
+
+        const bookTitle = document.createElement("h1");
+        bookTitle.classList.add("author-title");
+        bookTitle.innerText = book.title;
+        authorTitleContainer.append(bookTitle);
+
+        const bookAuthor = document.createElement("h3");
+        bookAuthor.classList.add("author");
+        bookAuthor.innerText = book.author;
+        authorTitleContainer.append(bookAuthor);
+
+        const pageNumberContainer = document.createElement("div");
+        pageNumberContainer.classList.add("page-number");
+        bookCard.append(pageNumberContainer);
+
+        const pElement = document.createElement("p");
+        pElement.innerText = "Page Number: ";
+        pageNumberContainer.append(pElement);
+
+        const pageNumber = document.createElement("span");
+        pageNumber.innerText = book.pages;
+
+        const bookActionsContainer = document.createElement("div");
+        bookActionsContainer.classList.add("book-actions");
+        bookCard.append(bookActionsContainer);
+
+        const readButton = document.createElement("button");
+        readButton.innerText = "Mark as Read";
+        bookActionsContainer.append(readButton);
+
+        const removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        bookActionsContainer.append(removeButton);
     }
 }
 
-showOnSite();
+showBooksOnSite();
