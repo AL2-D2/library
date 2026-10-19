@@ -58,7 +58,9 @@ function showBooksOnSite() {
         pageNumberContainer.append(pElement);
 
         const pageNumber = document.createElement("span");
+        pageNumber.classList.add("page")
         pageNumber.innerText = book.pages;
+        pElement.append(pageNumber);
 
         const bookActionsContainer = document.createElement("div");
         bookActionsContainer.classList.add("book-actions");
