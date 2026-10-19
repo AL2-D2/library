@@ -14,6 +14,8 @@ body{
 .book-grid-container{
     display: grid;
     border: 1px solid red;
-    min-width: 50%;
-    min-height: 50vh;
+    width: 75%;
+    max-width: 1400px;
+    height: 75vh;
+    max-height: 800px;
 }
