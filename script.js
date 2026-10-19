@@ -19,3 +19,13 @@ function addBookToLibrary(title, author, pages, read) {
     const book = new Book(title, author, pages, read);
     library.push(book);
 }
+
+addBookToLibrary("House of Mirth", "Edith Wharton", 205, true);
+addBookToLibrary("Goldbug", "Edgar Allen Poe", 35, false);
+addBookToLibrary("Red Badge Of Courage", "Stephan Carne", 150, true);
+
+function showOnSite(){
+    for(const book of library){
+        
+    }
+}
