@@ -1,3 +1,5 @@
+const bookContainer = document.querySelector(".book-grid-container");
+
 const library = [];
 
 function Book(title, author, pages, read) {
@@ -26,6 +28,10 @@ addBookToLibrary("Red Badge Of Courage", "Stephan Carne", 150, true);
 
 function showOnSite(){
     for(const book of library){
-        
+        const bookCard = document.createElement("div");
+        bookCard.classList.add("book-card");
+        bookContainer.append(bookCard);
     }
 }
+
+showOnSite();
