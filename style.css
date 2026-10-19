@@ -45,3 +45,20 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+h1{
+    font-size: 1.3rem;
+    
+}
+
+h3{
+    font-size: 0.9rem;
+}
+
+.page-number p{
+    font-weight: 600;
+}
+
+.page{
+    font-weight: 400;
+}
