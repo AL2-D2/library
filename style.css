@@ -62,3 +62,23 @@ h3{
 .page{
     font-weight: 400;
 }
+
+.book-actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    border:none;
+    padding: 4px;
+    border-radius: 3px;  
+    cursor:pointer;    
+}
+
+#remove-btn{
+    background-color: #f42e2e;
+}
+
+.read{
+    background-color: #48D94C;
+}

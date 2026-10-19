@@ -72,10 +72,16 @@ function showBooksOnSite() {
         const readButton = document.createElement("button");
         readButton.innerText = "Mark as Read";
         bookActionsContainer.append(readButton);
+        readButton.id = "read-btn";
+        if(book.read === true){
+            readButton.classList.add("read");
+            readButton.innerText = "Mark as Unread"
+        }
 
         const removeButton = document.createElement("button");
         removeButton.innerText = "Remove";
         bookActionsContainer.append(removeButton);
+        removeButton.id = "remove-btn";
     }
 }
 
