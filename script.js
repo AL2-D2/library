@@ -2,6 +2,9 @@ const bookContainer = document.querySelector(".book-grid-container");
 const authorAndTitleSection = document.querySelector(".author-title");
 const pageNumberSection = document.querySelector(".page-number");
 const bookActionsSection = document.querySelector(".book-actions");
+const readButton = document.querySelector("#read-btn");
+const removeButton = document.querySelector("#remove-btn");
+
 
 const library = [];
 
