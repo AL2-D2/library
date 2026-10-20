@@ -9,6 +9,7 @@
 body {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #3d3c3c;
