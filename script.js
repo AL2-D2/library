@@ -89,10 +89,12 @@ const readButtons = document.querySelectorAll("#read-btn");
 const removeButtons = document.querySelectorAll("#remove-btn");
 
 readButtons.forEach((readButton) => readButton.addEventListener("click", () => {
-    if (readButton.classList.aontains("read")) {
+    if (readButton.classList.contains("read")) {
         readButton.classList.remove("read");
+        readButton.innerText = "Mark as Read";
     }
     else {
         readButton.classList.add("read");
+        readButton.innerText = "Mark as Unread";
     }
 }))
