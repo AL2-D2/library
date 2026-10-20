@@ -83,3 +83,14 @@ h3 {
 .read {
     background-color: #48D94C;
 }
+
+.new-book-btn{
+    padding: 15px;    
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-container{
+    margin: 10px;
+}
