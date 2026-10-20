@@ -68,7 +68,7 @@ h3 {
     justify-content: space-between;
 }
 
-button {
+.book-card button {
     border: none;
     padding: 4px;
     border-radius: 3px;
