@@ -9,7 +9,31 @@
 </head>
 
 <body>
-    <button class="new-book-btn">Add New Book</button>
+    <button class="new-book-btn" popovertarget="new-book-dialog">Add New Book</button>
+
+    <div class="dialog">
+        <dialog popover id="new-book-dialog">
+            <form action class="book-form">
+                <label for="book-title">Book Name:</label>
+                <input type="text" name="book-title" id="book-title" required>
+                <label for="book-author">Author:</label>
+                <input type="text" name="book-author" id="book-author" required>
+                <label for="book-pages">Pages:</label>
+                <input type="number" name="book-pages" id="book-pages" required>
+                <div class="radio-group">
+                    <input type="radio" id="status-read" name="book-status" value="read">
+                    <label for="status-read">Read</label>
+                    <input type="radio" id="status-unread" name="book-status" value="unread" checked>
+                    <label for="status-unread">Unread</label>
+                </div>
+            </form>
+            <div class="form-actions">
+                <button type="submit">Add Book</button>
+                <button type="button">Clear</button>
+                <button type="button" popovertarget="new-book-dialog" popovertargetaction="hide">Close</button>
+            </div>
+        </dialog>
+    </div>
 
     <div class="book-grid-container">
     </div>
