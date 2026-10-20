@@ -97,4 +97,8 @@ readButtons.forEach((readButton) => readButton.addEventListener("click", () => {
         readButton.classList.add("read");
         readButton.innerText = "Mark as Unread";
     }
-}))
+}));
+
+removeButtons.forEach((removeButton) => removeButton.addEventListener("click", (button) => {
+    button.target.parentElement.parentElement.remove(); // book card is placed one parent away from the 'remove-btn', so there is two 'parentElement'.
+}));
