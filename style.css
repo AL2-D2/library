@@ -46,39 +46,39 @@ body {
     justify-content: space-between;
 }
 
-h1{
+h1 {
     font-size: 1.3rem;
-    
+
 }
 
-h3{
+h3 {
     font-size: 0.9rem;
 }
 
-.page-number p{
+.page-number p {
     font-weight: 600;
 }
 
-.page{
+.page {
     font-weight: 400;
 }
 
-.book-actions{
+.book-actions {
     display: flex;
     justify-content: space-between;
 }
 
-button{
-    border:none;
+button {
+    border: none;
     padding: 4px;
-    border-radius: 3px;  
-    cursor:pointer;    
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-#remove-btn{
+#remove-btn {
     background-color: #f42e2e;
 }
 
-.read{
+.read {
     background-color: #48D94C;
 }

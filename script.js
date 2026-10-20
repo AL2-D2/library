@@ -1,9 +1,4 @@
 const bookContainer = document.querySelector(".book-grid-container");
-const authorAndTitleSection = document.querySelector(".author-title");
-const pageNumberSection = document.querySelector(".page-number");
-const bookActionsSection = document.querySelector(".book-actions");
-const readButton = document.querySelector("#read-btn");
-const removeButton = document.querySelector("#remove-btn");
 
 
 const library = [];
@@ -73,9 +68,9 @@ function showBooksOnSite() {
         readButton.innerText = "Mark as Read";
         bookActionsContainer.append(readButton);
         readButton.id = "read-btn";
-        if(book.read === true){
+        if (book.read === true) {
             readButton.classList.add("read");
-            readButton.innerText = "Mark as Unread"
+            readButton.innerText = "Mark as Unread";
         }
 
         const removeButton = document.createElement("button");
@@ -86,3 +81,18 @@ function showBooksOnSite() {
 }
 
 showBooksOnSite();
+
+const authorAndTitleSection = document.querySelector(".author-title");
+const pageNumberSection = document.querySelector(".page-number");
+const bookActionsSection = document.querySelector(".book-actions");
+const readButtons = document.querySelectorAll("#read-btn");
+const removeButtons = document.querySelectorAll("#remove-btn");
+
+readButtons.forEach((readButton) => readButton.addEventListener("click", () => {
+    if (readButton.classList.aontains("read")) {
+        readButton.classList.remove("read");
+    }
+    else {
+        readButton.classList.add("read");
+    }
+}))
