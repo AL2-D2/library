@@ -133,3 +133,13 @@ form{
 form div:not([class]) *{
     display: block;    
 }   
+
+.form-actions button{
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-actions button:hover{
+    background-color: rgba(128, 128, 128, 0.208);
+}
