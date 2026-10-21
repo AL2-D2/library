@@ -121,4 +121,13 @@ dialog {
 form{
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+.form-actions{
+    align-self: flex-end;    
+}
+
+.radio-group{
+    align-self: center;
 }
