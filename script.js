@@ -1,7 +1,26 @@
 const bookContainer = document.querySelector(".book-grid-container");
-
+const form = document.querySelector(".book-form");
 
 const library = [];
+
+function addBookToLibrary(title, author, pages, read) {
+    const book = new Book(title, author, pages, read);
+    library.push(book);
+    showBooksOnSite();
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const bookTitle = data.get("book-title");
+    const bookAuthor = data.get("book-author");
+    const bookPage = data.get("book-pages");
+    const bookReadStatus = data.get("book-status");
+
+    addBookToLibrary(bookTitle, bookAuthor, bookPage, bookReadStatus);
+});
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -10,35 +29,28 @@ function Book(title, author, pages, read) {
     this.read = read;
 
     this.id = crypto.randomUUID();
-
-    this.info = function () {
-        // TODO: add read checker here and assign some value to it according to the check result.
-
-        return `${this.title} by ${this.author}, ${this.pages} pages.`;
-    }
 };
-
-function addBookToLibrary(title, author, pages, read) {
-    const book = new Book(title, author, pages, read);
-    library.push(book);
-}
 
 addBookToLibrary("House of Mirth", "Edith Wharton", 205, true);
 addBookToLibrary("Goldbug", "Edgar Allen Poe", 35, false);
 addBookToLibrary("Red Badge Of Courage", "Stephan Carne", 150, true);
 
 function showBooksOnSite() {
+
+    const bookCards = document.querySelectorAll(".book-card");
+    bookCards.forEach((bookCard) => bookCard.remove());
+
     for (const book of library) {
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
         bookContainer.append(bookCard);
 
         const authorTitleContainer = document.createElement("div");
-        authorTitleContainer.classList.add("title");
+        authorTitleContainer.classList.add("author-title");
         bookCard.append(authorTitleContainer);
 
         const bookTitle = document.createElement("h1");
-        bookTitle.classList.add("author-title");
+        bookTitle.classList.add("title");
         bookTitle.innerText = book.title;
         authorTitleContainer.append(bookTitle);
 
@@ -78,27 +90,27 @@ function showBooksOnSite() {
         bookActionsContainer.append(removeButton);
         removeButton.id = "remove-btn";
     }
+
+    const readButtons = document.querySelectorAll("#read-btn");
+    const removeButtons = document.querySelectorAll("#remove-btn");
+
+    readButtons.forEach((readButton) => readButton.addEventListener("click", () => {
+        if (readButton.classList.contains("read")) {
+            readButton.classList.remove("read");
+            readButton.innerText = "Mark as Read";
+        }
+        else {
+            readButton.classList.add("read");
+            readButton.innerText = "Mark as Unread";
+        }
+    }));
+
+    removeButtons.forEach((removeButton) => removeButton.addEventListener("click", (button) => {
+        button.target.parentElement.parentElement.remove(); // book card is placed one parent away from the 'remove-btn', so there is two 'parentElement'.
+        for (const book of library) {
+            if (button.target.parentElement.parentElement.querySelector(".title").innerText === book.title) {
+                library.splice(library.indexOf(book), 1);
+            }
+        }
+    }));
 }
-
-showBooksOnSite();
-
-const authorAndTitleSection = document.querySelector(".author-title");
-const pageNumberSection = document.querySelector(".page-number");
-const bookActionsSection = document.querySelector(".book-actions");
-const readButtons = document.querySelectorAll("#read-btn");
-const removeButtons = document.querySelectorAll("#remove-btn");
-
-readButtons.forEach((readButton) => readButton.addEventListener("click", () => {
-    if (readButton.classList.contains("read")) {
-        readButton.classList.remove("read");
-        readButton.innerText = "Mark as Read";
-    }
-    else {
-        readButton.classList.add("read");
-        readButton.innerText = "Mark as Unread";
-    }
-}));
-
-removeButtons.forEach((removeButton) => removeButton.addEventListener("click", (button) => {
-    button.target.parentElement.parentElement.remove(); // book card is placed one parent away from the 'remove-btn', so there is two 'parentElement'.
-}));
