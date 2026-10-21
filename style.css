@@ -111,15 +111,15 @@ dialog {
     width: 40%;
     max-width: 550px;
     height: 35%;
-    max-height: 325px;    
+    max-height: 325px;
 
     border-radius: 10px;
     border: none;
     padding: 10px;
-    
+
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,29 +127,30 @@ form{
     gap: 15px;
 }
 
-form div:not([class]) *{
-    display: block;    
-}   
+form div:not([class]) * {
+    display: block;
+}
 
-.form-actions button{
+.form-actions button {
     padding: 5px;
     border: 1px solid gray;
     border-radius: 5px;
     cursor: pointer;
 }
-.form-actions button:hover{
+
+.form-actions button:hover {
     background-color: rgba(128, 128, 128, 0.208);
 }
 
-.form-container{
+.form-container {
     height: 100%;
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-form input{
+form input {
     padding: 5px;
     margin-top: 5px;
 }

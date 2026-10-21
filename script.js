@@ -1,5 +1,6 @@
 const bookContainer = document.querySelector(".book-grid-container");
 const form = document.querySelector(".book-form");
+const dialogClearButton = document.querySelector("#clear-form-btn");
 
 const library = [];
 
@@ -117,3 +118,18 @@ function showBooksOnSite() {
         }
     }));
 }
+
+dialogClearButton.addEventListener("click", () => {
+    const form = document.querySelector(".book-form");
+
+    const inputFields = form.querySelectorAll("input");
+
+    for (let i = 0; i < inputFields.length; i++) {
+        if (inputFields[i].type != "radio") {
+            inputFields[i].value = "";
+        }
+        else if (inputFields[i].id == "status-unread") {
+            inputFields[i].checked = true;
+        }
+    }
+});
