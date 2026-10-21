@@ -116,10 +116,7 @@ dialog {
     border-radius: 10px;
     border: none;
     padding: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 form{
@@ -142,4 +139,12 @@ form div:not([class]) *{
 }
 .form-actions button:hover{
     background-color: rgba(128, 128, 128, 0.208);
+}
+
+.form-container{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
