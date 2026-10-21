@@ -111,5 +111,14 @@ dialog {
     width: 40%;
     max-width: 550px;
     height: 35%;
-    max-height: 325px;
+    max-height: 325px;    
+
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
 }
