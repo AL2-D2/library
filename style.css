@@ -91,3 +91,8 @@ h3 {
     cursor: pointer;
     margin: 10px;
 }
+
+dialog::backdrop{
+    backdrop-filter: blur(3px);
+    background-color: #34333380;
+}
