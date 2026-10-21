@@ -19,7 +19,10 @@ form.addEventListener("submit", (e) => {
     const bookPage = data.get("book-pages");
     const bookReadStatus = data.get("book-status");
 
-    addBookToLibrary(bookTitle, bookAuthor, bookPage, bookReadStatus);
+    const isRead = bookReadStatus === "read";
+    console.log(isRead);
+
+    addBookToLibrary(bookTitle, bookAuthor, bookPage, isRead);
 });
 
 function Book(title, author, pages, read) {
