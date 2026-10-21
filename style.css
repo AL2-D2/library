@@ -96,3 +96,15 @@ dialog::backdrop{
     backdrop-filter: blur(3px);
     background-color: #34333380;
 }
+
+dialog {
+  position: fixed;
+  /* Move it 50% relative to container */
+  top: 50%;
+  left: 50%;
+  /* Move it back 50% relative to self */
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
