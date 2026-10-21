@@ -148,3 +148,8 @@ form div:not([class]) *{
     justify-content: center;
     align-items: center;
 }
+
+form input{
+    padding: 5px;
+    margin-top: 5px;
+}
