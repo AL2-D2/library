@@ -21,10 +21,13 @@ form.addEventListener("submit", (e) => {
     const bookReadStatus = data.get("book-status");
 
     const isRead = bookReadStatus === "read";
-    console.log(isRead);
 
     addBookToLibrary(bookTitle, bookAuthor, bookPage, isRead);
-});
+
+    resetInputs();
+}
+);
+
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -120,6 +123,10 @@ function showBooksOnSite() {
 }
 
 dialogClearButton.addEventListener("click", () => {
+    resetInputs();
+});
+
+function resetInputs() {
     const form = document.querySelector(".book-form");
 
     const inputFields = form.querySelectorAll("input");
@@ -132,4 +139,4 @@ dialogClearButton.addEventListener("click", () => {
             inputFields[i].checked = true;
         }
     }
-});
+}
